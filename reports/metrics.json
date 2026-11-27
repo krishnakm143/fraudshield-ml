@@ -1,0 +1,155 @@
+{
+  "best": "hgb",
+  "metrics": {
+    "logreg": {
+      "valid": {
+        "n": 9967,
+        "fraud_rate": 0.0131433731313334,
+        "pr_auc": 0.8340009942709435,
+        "roc_auc": 0.9940311179682674,
+        "recall_at_1pct_fpr": 0.8549618320610687,
+        "brier": 0.004477266074365088,
+        "threshold": 0.07,
+        "precision": 0.5021834061135371,
+        "recall": 0.8778625954198473,
+        "alert_rate": 0.02297582020668205,
+        "tp": 115,
+        "fp": 114,
+        "fn": 16,
+        "tn": 9722,
+        "fraud_amount_caught_pct": 0.9305947619010787,
+        "cost_no_model": 27187.310000000005,
+        "cost_with_model": 3855.1,
+        "expected_savings": 23332.210000000006,
+        "savings_pct": 0.8582022274362562
+      },
+      "test": {
+        "n": 9968,
+        "fraud_rate": 0.012841091492776886,
+        "pr_auc": 0.8172915339033667,
+        "roc_auc": 0.9914415809197153,
+        "recall_at_1pct_fpr": 0.8515625,
+        "brier": 0.004182157255999035,
+        "threshold": 0.07,
+        "precision": 0.49099099099099097,
+        "recall": 0.8515625,
+        "alert_rate": 0.022271268057784913,
+        "tp": 109,
+        "fp": 113,
+        "fn": 19,
+        "tn": 9727,
+        "fraud_amount_caught_pct": 0.9144850930391819,
+        "cost_no_model": 22229.67,
+        "cost_with_model": 3846.05,
+        "expected_savings": 18383.62,
+        "savings_pct": 0.8269857357306699
+      },
+      "test_raw_brier": 0.02113533642429398,
+      "test_per_type_recall": {
+        "account_takeover": {
+          "n": 42,
+          "recall": 0.8809523809523809
+        },
+        "card_testing": {
+          "n": 43,
+          "recall": 0.8604651162790697
+        },
+        "geo_velocity": {
+          "n": 23,
+          "recall": 0.9130434782608695
+        },
+        "new_category": {
+          "n": 15,
+          "recall": 0.6
+        },
+        "night_high_value": {
+          "n": 5,
+          "recall": 1.0
+        }
+      }
+    },
+    "hgb": {
+      "valid": {
+        "n": 9967,
+        "fraud_rate": 0.0131433731313334,
+        "pr_auc": 0.9190866342654745,
+        "roc_auc": 0.9974381381372059,
+        "recall_at_1pct_fpr": 0.9541984732824428,
+        "brier": 0.0030143220685437066,
+        "threshold": 0.12000000000000001,
+        "precision": 0.7423312883435583,
+        "recall": 0.9236641221374046,
+        "alert_rate": 0.01635396809471255,
+        "tp": 121,
+        "fp": 42,
+        "fn": 10,
+        "tn": 9794,
+        "fraud_amount_caught_pct": 0.9850435395653816,
+        "cost_no_model": 27187.310000000005,
+        "cost_with_model": 1713.44,
+        "expected_savings": 25473.870000000006,
+        "savings_pct": 0.9369764790999919
+      },
+      "test": {
+        "n": 9968,
+        "fraud_rate": 0.012841091492776886,
+        "pr_auc": 0.920079217142281,
+        "roc_auc": 0.9980905424288617,
+        "recall_at_1pct_fpr": 0.9453125,
+        "brier": 0.002904035081905968,
+        "threshold": 0.12000000000000001,
+        "precision": 0.6551724137931034,
+        "recall": 0.890625,
+        "alert_rate": 0.017455858747993578,
+        "tp": 114,
+        "fp": 60,
+        "fn": 14,
+        "tn": 9780,
+        "fraud_amount_caught_pct": 0.9290710011911741,
+        "cost_no_model": 22229.67,
+        "cost_with_model": 2959.1499999999996,
+        "expected_savings": 19270.519999999997,
+        "savings_pct": 0.8668828642080606
+      },
+      "test_raw_brier": 0.0037396943694907,
+      "test_per_type_recall": {
+        "account_takeover": {
+          "n": 42,
+          "recall": 0.9047619047619048
+        },
+        "card_testing": {
+          "n": 43,
+          "recall": 0.8837209302325582
+        },
+        "geo_velocity": {
+          "n": 23,
+          "recall": 1.0
+        },
+        "new_category": {
+          "n": 15,
+          "recall": 0.6666666666666666
+        },
+        "night_high_value": {
+          "n": 5,
+          "recall": 1.0
+        }
+      }
+    }
+  },
+  "latency": {
+    "score_only": {
+      "p50_ms": 0.9846739999375131,
+      "p95_ms": 1.0441904499202792
+    },
+    "with_explanation": {
+      "p50_ms": 1.574650000065958,
+      "p95_ms": 1.6593465000596552
+    }
+  },
+  "timings": {
+    "features_s": 0.1489813260000119,
+    "fit_logreg_s": 0.12523173199997473,
+    "fit_hgb_s": 2.1249392109998553,
+    "total_s": 2.7466801860000487
+  }
+}

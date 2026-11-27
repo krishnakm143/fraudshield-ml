@@ -1,0 +1,221 @@
+{
+  "reference_n": 9967,
+  "current_n": 16864,
+  "score_psi": 0.1302,
+  "score_status": "moderate",
+  "score_mean_reference": 0.01316,
+  "score_mean_current": 0.02565,
+  "alert_rate_reference": 0.01635,
+  "alert_rate_current": 0.0373,
+  "n_significant": 1,
+  "n_moderate": 3,
+  "recommended_action": "retrain: significant drift in features or score distribution",
+  "features": [
+    {
+      "feature": "is_online",
+      "psi": 0.2822,
+      "status": "significant"
+    },
+    {
+      "feature": "amount_log",
+      "psi": 0.1652,
+      "status": "moderate"
+    },
+    {
+      "feature": "amount_zscore",
+      "psi": 0.1345,
+      "status": "moderate"
+    },
+    {
+      "feature": "amount_ratio_mean_log",
+      "psi": 0.1024,
+      "status": "moderate"
+    },
+    {
+      "feature": "dist_home_km_log",
+      "psi": 0.0756,
+      "status": "stable"
+    },
+    {
+      "feature": "is_night",
+      "psi": 0.0689,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_retail",
+      "psi": 0.0386,
+      "status": "stable"
+    },
+    {
+      "feature": "hour_cos",
+      "psi": 0.0289,
+      "status": "stable"
+    },
+    {
+      "feature": "amount_sum_24h_log",
+      "psi": 0.0254,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_electronics",
+      "psi": 0.0121,
+      "status": "stable"
+    },
+    {
+      "feature": "is_new_category",
+      "psi": 0.011,
+      "status": "stable"
+    },
+    {
+      "feature": "speed_prev_kmh_log",
+      "psi": 0.0105,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_gift_cards",
+      "psi": 0.0105,
+      "status": "stable"
+    },
+    {
+      "feature": "dist_prev_km_log",
+      "psi": 0.0081,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_restaurants",
+      "psi": 0.0071,
+      "status": "stable"
+    },
+    {
+      "feature": "hour_sin",
+      "psi": 0.0057,
+      "status": "stable"
+    },
+    {
+      "feature": "is_foreign",
+      "psi": 0.0051,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_grocery",
+      "psi": 0.0037,
+      "status": "stable"
+    },
+    {
+      "feature": "secs_since_prev_log",
+      "psi": 0.003,
+      "status": "stable"
+    },
+    {
+      "feature": "small_txn_count_1h",
+      "psi": 0.003,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_travel",
+      "psi": 0.0029,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_utilities",
+      "psi": 0.0022,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_fuel",
+      "psi": 0.0019,
+      "status": "stable"
+    },
+    {
+      "feature": "txn_count_1h",
+      "psi": 0.0018,
+      "status": "stable"
+    },
+    {
+      "feature": "is_new_device",
+      "psi": 0.0016,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_entertainment",
+      "psi": 0.0015,
+      "status": "stable"
+    },
+    {
+      "feature": "txn_count_24h",
+      "psi": 0.0014,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_health",
+      "psi": 0.0013,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_jewelry",
+      "psi": 0.0008,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_crypto_exchange",
+      "psi": 0.0004,
+      "status": "stable"
+    },
+    {
+      "feature": "cat_digital_goods",
+      "psi": 0.0002,
+      "status": "stable"
+    },
+    {
+      "feature": "history_count_log",
+      "psi": 0.6922,
+      "status": "structural",
+      "note": "grows monotonically with time (cards accumulate history)"
+    }
+  ],
+  "generated_at": "2026-11-26T16:30:30+00:00",
+  "model_version": "v0001",
+  "current_period": [
+    "2026-04-01 00:02:08",
+    "2026-04-30 23:59:24"
+  ],
+  "performance": {
+    "reference_test": {
+      "fraud_rate": 0.012841091492776886,
+      "pr_auc": 0.920079217142281,
+      "roc_auc": 0.9980905424288617,
+      "recall_at_1pct_fpr": 0.9453125,
+      "precision": 0.6551724137931034,
+      "recall": 0.890625,
+      "savings_pct": 0.8668828642080606
+    },
+    "current": {
+      "fraud_rate": 0.022058823529411766,
+      "pr_auc": 0.8972056193566225,
+      "roc_auc": 0.9932336043021184,
+      "recall_at_1pct_fpr": 0.8790322580645161,
+      "precision": 0.5405405405405406,
+      "recall": 0.9139784946236559,
+      "savings_pct": 0.912744995987388
+    },
+    "current_per_type_recall": {
+      "account_takeover": 0.9487,
+      "card_testing": 0.875,
+      "geo_velocity": 0.9167,
+      "new_category": 0.8125,
+      "night_high_value": 1.0
+    }
+  },
+  "top_drifted_features": [
+    "is_online",
+    "amount_log",
+    "amount_zscore",
+    "amount_ratio_mean_log",
+    "dist_home_km_log"
+  ],
+  "score_quantiles_current": [
+    0.00026,
+    0.00617,
+    0.96089
+  ]
+}

@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fraudshield"
+version = "0.1.0"
+description = "Real-time card fraud detection with point-in-time features, cost-optimal thresholds, explanations and drift monitoring"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Udit Mishra" }]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "pydantic>=2.6",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "joblib>=1.3",
+    "threadpoolctl>=3.1",
+    "anthropic>=0.70",
+]
+
+[project.urls]
+Homepage = "https://github.com/krishnakm143/fraudshield-ml"
+Repository = "https://github.com/krishnakm143/fraudshield-ml"
+Issues = "https://github.com/krishnakm143/fraudshield-ml/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.5"]
+
+[project.scripts]
+fraudshield = "fraudshield.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fraudshield"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.format]
+exclude = ["src/fraudshield/llm.py"]  # vendored verbatim from the shared portfolio client
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "E731"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

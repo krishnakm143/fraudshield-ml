@@ -1,0 +1,27 @@
+# `docker compose up api` serves the model baked into the image.
+# `docker compose run --rm trainer` retrains into the shared registry volume (new version + LATEST pointer);
+# restart `api` to pick it up.
+services:
+  api:
+    build: .
+    image: fraudshield:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - registry:/app/models/registry
+      - reports:/app/reports
+
+  trainer:
+    image: fraudshield:latest
+    profiles: ["jobs"]
+    command: ["sh", "-c", "fraudshield train && fraudshield drift"]
+    volumes:
+      - registry:/app/models/registry
+      - reports:/app/reports
+
+volumes:
+  registry:
+  reports:
