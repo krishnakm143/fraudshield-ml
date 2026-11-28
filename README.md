@@ -9,6 +9,8 @@
 
 ---
 
+> **LLM providers:** set `GROQ_API_KEY` (free tier, `openai/gpt-oss-120b`, used first) or `ANTHROPIC_API_KEY` (Claude). `LLM_PROVIDER` picks one, `LLM_OFFLINE=1` forces offline. The Claude instructions below apply to either key.
+
 ## Why this matters
 
 A fraud model only earns its keep if it holds up in production, and most portfolio fraud projects never get that far. They train on a shuffled Kaggle CSV, report ROC-AUC on data that leaked across time, and stop at a 0.5 threshold. Fraud teams deal with problems those projects skip:
